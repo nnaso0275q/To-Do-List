@@ -1,6 +1,6 @@
 "use client";
 //   TO-DO LIST BOX
-import { FilterButton, AddButton, Input, Task } from "@/components";
+import { FilterButton, AddButton, Input } from "@/components";
 import { useState } from "react";
 
 const Todo = () => {
@@ -10,10 +10,10 @@ const Todo = () => {
   // all, active,completed
   const [filter, setFilter] = useState("all");
 
-  // task nemegdsen ni
+  // Task nemegdsen ni
   const addTask = () => {
     if (!newTask.trim()) return;
-    setTasks([...tracks, { text: newTask, completed: false }]);
+    setTasks([...tasks, { text: newTask, completed: false }]);
     setNewTask("");
   };
 
@@ -38,10 +38,10 @@ const Todo = () => {
 
   return (
     <>
-      {/* background style*/}
+      {/* Background style*/}
       <div className=" pt-50 pl-100 bg-gray-200 w-full h-screen ">
         {/* To-Do list Box */}
-        <div className="bg-white w-[400px] h-[300px] rounded-2xl rounded-black p-6 shadow-2xl shadow-gray-500 mb-[40]">
+        <div className="bg-white w-[400px] h-fit rounded-2xl rounded-black p-6 shadow-2xl shadow-gray-500 mb-[40]">
           <h3 className="text-black text-2xl ml-30 ">To-Do list</h3>
           {/* input and button */}
           <div className="flex gap-2 mt-5">
@@ -76,27 +76,16 @@ const Todo = () => {
               Completed
             </FilterButton>
           </div>
-          {/* click buttons
-          <div className="flex gap-2 mt-5 ">
-            <button className=" bg-blue-500 text-white w-10 h-7 rounded">
-              All
-            </button>
-            <button className=" bg-gray-300 text-gray-600 w-15 h-7 rounded">
-              Active
-            </button>
-            <button className="bg-gray-300 text-gray-600 w-25 h-7 rounded">
-              Completed
-            </button>
-          </div> */}
 
           {/* tasks */}
           {filteredTasks.map((task, i) => (
             <div
               key={i}
-              className="w-full bg-[#F9FAFB] rounded-md flex justify-between items-center px-3 py-2 mb-2"
+              className="w-[345] h-[62] bg-[#F9FAFB] rounded-md flex justify-between items-center px-3 py-2 mb-2 mt-[20] text-black"
             >
               <label className="flex items-center gap-2">
                 <input
+                  className="w-[20] h-[20] bg-[#3B73ED] border-[#767676]"
                   type="checkbox"
                   checked={task.completed}
                   onChange={() => toggleTask(i)}
@@ -106,9 +95,10 @@ const Todo = () => {
                 </span>
               </label>
               {task.completed && (
+                // Delete button
                 <button
                   onClick={() => deleteTask(i)}
-                  className="text-red-500 text-sm"
+                  className="text-[#EF4444] w-[67] h-[30] bg-[#FEF2F2] rounded-[6] text-sm"
                 >
                   Delete
                 </button>
@@ -123,48 +113,14 @@ const Todo = () => {
             </span>
             <button
               onClick={() => setTasks(tasks.filter((t) => !t.completed))}
-              className="text-red-500"
+              className="text-[#EF4444]"
             >
               Clear completed
-              {/* Footer
-          <p className="text-gray-500 pt-10 pl-20">
-            No tasks yet. Add one above!
-          </p>
-          <p className="text-gray-500 pl-16 pt-8">
-            Powered by
-            <span className="text-blue-400 "> Pinecone academy</span>
-          </p>
-        </div> */}
-              {/* First CheckBox
-        <div>
-          <div className="w-80 h-16 bg-[#F9FAFB] rounded-md flex mb-[20] items-center ">
-            <Task></Task>
-            <div className="text-black pl-[10]">Create PR 2</div>
-          </div>
-        </div>
-
-        Second CheckBox
-        <div>
-          <div className="w-80 h-16 bg-[#F9FAFB] rounded-md flex mb-[20] items-center ">
-            <Task></Task>
-            <div className="text-black pl-[10] line-through">Create PR </div>
-            <button className="w-[68] h-[30] bg-[#FEF2F2] rounded-md ml-[120]">
-              <span className="text-[#EF4444]">Delete</span>
             </button>
           </div>
-        </div>
 
-        border-b
-        <div className="border-b-1 border-[#acafb4] w-[320]"></div>
-        <div className="text-[#acafb4] pt-[16] inter">
-          1 of 2 tasks completed
-          <span className="text-[#EF4444] pl-[40]">Clear completed </span>
-        </div> */}
-            </button>
-            {/* <p className="text-gray-500 pl-16 pt-8">
-              Powered by
-              <span className="text-blue-400 "> Pinecone academy</span>
-            </p> */}
+          <div className="text-[#6B7280] mt-[40] ml-[80]">
+            Powered by<span className="text-[#3B73ED]"> Pinecone academy</span>
           </div>
         </div>
       </div>
