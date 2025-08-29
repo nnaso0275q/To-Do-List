@@ -12,8 +12,12 @@ const Todo = () => {
 
   // Task nemegdsen ni
   const addTask = () => {
+    if (newTask === "") {
+      alert("Textee oruulna uu!!");
+      return;
+    }
     if (!newTask.trim()) return;
-    setTasks([...tasks, { text: newTask, completed: false }]);
+    setTasks([{ text: newTask, completed: false }, ...tasks]);
     setNewTask("");
   };
 
@@ -39,10 +43,12 @@ const Todo = () => {
   return (
     <>
       {/* Background style*/}
-      <div className=" pt-50 pl-100 bg-gray-200 w-full h-screen ">
+      <div className=" pt-50 pl-100 bg-gray-200 w-full h-screen inter ">
         {/* To-Do list Box */}
         <div className="bg-white w-[400px] h-fit rounded-2xl rounded-black p-6 shadow-2xl shadow-gray-500 mb-[40]">
-          <h3 className="text-black text-2xl ml-30 ">To-Do list</h3>
+          <h3 className="text-black text-2xl ml-30 font-semibold">
+            To-Do list
+          </h3>
           {/* input and button */}
           <div className="flex gap-2 mt-5">
             <Input
@@ -118,6 +124,8 @@ const Todo = () => {
               Clear completed
             </button>
           </div>
+
+          {/* <div className="text-[#6B7280]">No tasks yet. Add one above!</div> */}
 
           <div className="text-[#6B7280] mt-[40] ml-[80]">
             Powered by<span className="text-[#3B73ED]"> Pinecone academy</span>

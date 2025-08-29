@@ -7,8 +7,11 @@
 // }
 
 export const Input=({value, onChange, placeholder})=>{
+
+
+
     return(<input 
-        className="w-60 h-10  border border-gray-300 text-black rounded px-2" 
+        className="w-60 h-10  border border-gray-300 text-black rounded px-2 " 
         type="text" 
         value={value}
         onChange={onChange}
@@ -16,4 +19,4 @@ export const Input=({value, onChange, placeholder})=>{
         ></input>)
    
       
-    }
+    } 
