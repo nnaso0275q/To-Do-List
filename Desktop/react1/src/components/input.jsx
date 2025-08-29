@@ -8,10 +8,8 @@
 
 export const Input=({value, onChange, placeholder})=>{
 
-
-
     return(<input 
-        className="w-60 h-10  border border-gray-300 text-black rounded px-2 " 
+        className="w-60 h-10  border border-gray-300 text-black rounded px-2 focus:outline-none focus:ring-2 focus:ring-[#3C82F6]" 
         type="text" 
         value={value}
         onChange={onChange}

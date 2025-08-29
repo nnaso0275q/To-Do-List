@@ -91,7 +91,7 @@ const Todo = () => {
             >
               <label className="flex items-center gap-2">
                 <input
-                  className="w-[20] h-[20] bg-[#3B73ED] border-[#767676]"
+                  className="w-[20px] h-[20px] accent-[#3C82F6] border-[#767676]"
                   type="checkbox"
                   checked={task.completed}
                   onChange={() => toggleTask(i)}
