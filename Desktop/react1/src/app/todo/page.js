@@ -87,11 +87,11 @@ const Todo = () => {
           {filteredTasks.map((task, i) => (
             <div
               key={i}
-              className="w-[345] h-[62] bg-[#F9FAFB] rounded-md flex justify-between items-center px-3 py-2 mb-2 mt-[20] text-black"
+              className="w-[345] h-[62] bg-[#F9FAFB] rounded-md flex justify-between items-center px-3 py-2 mb-2 mt-[20] text-black hover:bg-gray-200  hover:duration-[0.3s]"
             >
               <label className="flex items-center gap-2">
                 <input
-                  className="w-[20px] h-[20px] accent-[#3C82F6] border-[#767676]"
+                  className="w-[20px] h-[20px] accent-[#3C82F6] border-[#767676] "
                   type="checkbox"
                   checked={task.completed}
                   onChange={() => toggleTask(i)}
@@ -128,7 +128,11 @@ const Todo = () => {
           {/* <div className="text-[#6B7280]">No tasks yet. Add one above!</div> */}
 
           <div className="text-[#6B7280] mt-[40] ml-[80]">
-            Powered by<span className="text-[#3B73ED]"> Pinecone academy</span>
+            Powered by
+            <span className="text-[#3B73ED] hover:text-blue-400">
+              {" "}
+              Pinecone academy
+            </span>
           </div>
         </div>
       </div>
