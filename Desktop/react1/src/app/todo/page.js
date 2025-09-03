@@ -1,5 +1,5 @@
 "use client";
-//   TO-DO LIST BOX
+//   TO-DO LIST
 import { FilterButton, AddButton, Input } from "@/components";
 import { useState } from "react";
 
